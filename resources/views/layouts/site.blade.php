@@ -32,7 +32,7 @@
                     {{-- Logo --}}
                     <a href="/" class="shrink-0">
                         @if(request()->is('filialen*'))
-                            <img src="{{ asset('images/filialen/logo.png') }}" alt="Pflegegruppe Rhein-Main" class="h-[45px] md:h-[65px] w-auto">
+                            <img src="{{ asset('images/filialen/logo.png') }}" alt="Pflegegruppe Rhein-Main" class="h-[30px] md:h-[65px] w-auto">
                         @else
                             <img src="{{ asset('images/logo.svg') }}" alt="Pflegegruppe Rhein-Main" class="h-[45px] md:h-[65px] w-auto">
                         @endif

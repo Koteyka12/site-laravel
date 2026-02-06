@@ -72,8 +72,8 @@
         @endif
     </article>
 
-    {{-- Related Articles --}}
-    <section class="pb-[40px]">
+    {{-- Related Articles (Mobile only) --}}
+    <section class="md:hidden pb-[40px]">
         <h2 class="text-[24px] md:text-[32px] font-bold text-black mb-[20px] md:mb-[30px]">Andere Artikel</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
