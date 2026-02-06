@@ -84,7 +84,7 @@
 
         <a 
             href="{{ route('blog.index') }}" 
-            class="block w-full h-[50px] md:h-[90px] flex items-center justify-center text-[16px] md:text-[18px] font-semibold text-black bg-white border-2 border-[#E8E8E8] rounded-[20px] md:rounded-[30px] hover:bg-[#8BE567] hover:border-[#8BE567] hover:text-white transition-colors"
+            class="block w-full h-[72px] md:h-[90px] flex items-center justify-center text-[16px] md:text-[18px] font-semibold text-black bg-white border-2 border-[#E8E8E8] rounded-[20px] md:rounded-[30px] hover:bg-[#8BE567] hover:border-[#8BE567] hover:text-white transition-colors"
         >
             Mehr anzeigen
         </a>
