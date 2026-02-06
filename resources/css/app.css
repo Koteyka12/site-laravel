@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Google Sans Flex - Local font */
+@font-face {
+    font-family: 'Google Sans Flex';
+    src: url('/fonts/GoogleSansFlex-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: 'Inter', 'Google Sans Flex', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    
+    /* Brand Colors - from Figma */
+    --color-brand-green: #8BE567;
+    --color-brand-green-dark: #16a34a;
+    --color-brand-cyan: #64CEED;
+    --color-brand-lime: #8BE567;
+    --color-footer-bg: #323232;
+    --color-gray-border: #E8E8E8;
+    --color-gray-text: #8B8B8B;
+    --color-gray-bg: #F6F6F6;
+}
+
+/* Prose styling for article content */
+.prose h2 {
+    @apply text-xl lg:text-2xl font-bold text-gray-900 mt-10 mb-4;
+}
+
+.prose h3 {
+    @apply text-lg lg:text-xl font-semibold text-gray-900 mt-8 mb-3;
+}
+
+.prose p {
+    @apply text-gray-700 leading-relaxed mb-6;
+}
+
+.prose ul, .prose ol {
+    @apply mb-6 pl-6;
+}
+
+.prose li {
+    @apply text-gray-700 leading-relaxed mb-2;
+}
+
+.prose ul li {
+    @apply list-disc;
+}
+
+.prose ol li {
+    @apply list-decimal;
+}
+
+.prose a {
+    @apply text-brand-green hover:text-brand-green-dark underline transition-colors;
+}
+
+.prose img {
+    @apply rounded-xl my-8;
+}
+
+.prose blockquote {
+    @apply border-l-4 border-brand-green pl-6 italic text-gray-600 my-8;
+}
+
+.prose strong {
+    @apply font-semibold text-gray-900;
+}
+
+/* Custom scrollbar */
+
+
+.scrollbar-thin::-webkit-scrollbar {
+    width: 14px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #E0E0E0;
+    border-radius: 20px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-button {
+    display: none;
+}

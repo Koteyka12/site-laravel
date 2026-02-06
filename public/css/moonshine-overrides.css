@@ -1,0 +1,20 @@
+/* Breadcrumbs (auf dem Dashboard) ausblenden */
+.layout-page[x-data*="/admin/page/dashboard"] .breadcrumbs {
+    display: none !important;
+}
+
+/* Layout-Navigation als Flex-Zeile */
+.layout-page[x-data*="/admin/page/dashboard"] .layout-navigation {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Der Profil-Wrapper ist das Flex-Item -> der muss nach rechts */
+.layout-page[x-data*="/admin/page/dashboard"] .layout-navigation > div[x-data*="_fragment-load=profile"] {
+    margin-left: auto !important;
+}
+
+/* Sparkline tooltip label ausblenden, Datum bleibt sichtbar */
+.layout-page[x-data*="/admin/page/dashboard"] .apexcharts-tooltip-series-group .apexcharts-tooltip-text-label {
+    display: none !important;
+}
