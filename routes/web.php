@@ -12,7 +12,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/leistungen', [LeistungenController::class, 'index'])->name('leistungen.index');
 
-Route::get('/filialen', [FilialenController::class, 'index'])->name('filialen.index');
+Route::get('/filialen/frankfurt-offenbach', [FilialenController::class, 'index'])->name('filialen.index');
 
 Route::get('/karriere', [KarriereController::class, 'index'])->name('karriere.index');
 

@@ -7,21 +7,21 @@
     @php
         $demoPosts = [
             (object) [
-                'slug' => '#',
+                'slug' => 'verblisterung-innovative-loesungen',
                 'thumbnail' => 'images/home/news-featured.png',
                 'title' => 'Verblisterung: Innovative Lösungen für Komfort und Präzision bei der Einnahme von Medikamenten',
                 'categories' => collect([(object) ['title' => 'Kategorie']]),
                 'published_at' => now(),
             ],
             (object) [
-                'slug' => '#',
+                'slug' => 'pflegetipps-fuer-den-alltag',
                 'thumbnail' => null,
                 'title' => 'Pflegetipps für den Alltag: So unterstützen Sie Ihre Angehörigen optimal',
                 'categories' => collect([(object) ['title' => 'Pflege']]),
                 'published_at' => now(),
             ],
             (object) [
-                'slug' => '#',
+                'slug' => 'neue-mitarbeiter-im-team',
                 'thumbnail' => null,
                 'title' => 'Neue Mitarbeiter im Team: Willkommen bei Pflegegruppe Rhein-Main',
                 'categories' => collect([(object) ['title' => 'Team']]),
@@ -31,9 +31,9 @@
         $displayPosts = $posts->isEmpty() ? $demoPosts : $posts;
     @endphp
 
-    <div class="max-w-[1200px] mx-auto my-[60px]">
+    <div class="max-w-[1200px] mx-auto my-[30px] md:my-[60px] px-[20px] md:px-0">
         {{-- Page Title --}}
-        <h1 class="text-[40px] font-bold text-black mb-10">Blog</h1>
+        <h1 class="text-[24px] md:text-[40px] font-bold text-black mb-[20px] md:mb-10">Blog</h1>
 
         {{-- Posts Grid --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">

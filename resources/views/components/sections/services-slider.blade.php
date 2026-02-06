@@ -1,17 +1,17 @@
 {{-- Professionelle Pflegeleistungen --}}
-<section class="pt-[70px] pb-[30px]">
+<section class="pt-[40px] md:pt-[70px] pb-[30px]">
     {{-- Section Header --}}
-    <div class="text-center mb-[70px]">
-        <h2 class="font-bold text-[40px] leading-[40px] text-black mb-[16px]">
+    <div class="text-center mb-[30px] md:mb-[70px]">
+        <h2 class="font-bold text-[28px] md:text-[40px] leading-[32px] md:leading-[40px] text-black mb-[12px] md:mb-[16px]">
             Professionelle Pflegeleistungen
         </h2>
-        <p class="font-medium text-[26px] leading-[26px] text-black">
+        <p class="font-medium text-[18px] md:text-[26px] leading-[24px] md:leading-[26px] text-black">
             Erstklassige Betreuung für Personen mit Pflegebedarf mit folgendem Leistungsangebot
         </p>
     </div>
 
-    {{-- Cards Slider --}}
-    <div class="relative" x-data="{ currentSlide: 0, totalSlides: 2 }">
+    {{-- Desktop: Cards Slider --}}
+    <div class="hidden md:block relative" x-data="{ currentSlide: 0, totalSlides: 2 }">
         {{-- Navigation Arrows --}}
         <button
             type="button"
@@ -53,7 +53,7 @@
                         <p class="font-normal text-[18px] leading-[26px] text-[#8C8C8C] mb-[24px] min-h-[52px]">
                             Körperpflege, Ernährung, Unterstützung der Mobilität
                         </p>
-                        <a href="/leistungen/grundpflege" class="block w-full h-[56px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[18px] text-white hover:bg-[#50c4e0] transition-colors">
+                        <a href="/leistungen/grundpflege" class="block w-full h-[56px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[18px] text-white hover:bg-[#8BE567] hover:text-black transition-colors">
                             Ansehen
                         </a>
                     </div>
@@ -73,7 +73,7 @@
                         <p class="font-normal text-[18px] leading-[26px] text-[#8B8B8B] mb-[24px] min-h-[52px]">
                             Medikamentenlieferung und Einnahmekontrolle, Verbände etc
                         </p>
-                        <a href="/leistungen/behandlungspflege" class="block w-full h-[56px] bg-[#8BE567] rounded-[10px] flex items-center justify-center font-semibold text-[18px] text-black hover:bg-[#7ad456] transition-colors">
+                        <a href="/leistungen/behandlungspflege" class="block w-full h-[56px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[18px] text-white hover:bg-[#8BE567] hover:text-black transition-colors">
                             Ansehen
                         </a>
                     </div>
@@ -93,10 +93,75 @@
                         <p class="font-normal text-[18px] leading-[26px] text-[#8C8C8C] mb-[24px] min-h-[52px]">
                             Kochen, Putzen, Einkaufen und Wäsche waschen
                         </p>
-                        <a href="/leistungen/haushaltshilfe" class="block w-full h-[56px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[18px] text-white hover:bg-[#50c4e0] transition-colors">
+                        <a href="/leistungen/haushaltshilfe" class="block w-full h-[56px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[18px] text-white hover:bg-[#8BE567] hover:text-black transition-colors">
                             Ansehen
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Mobile: Horizontal Scroll --}}
+    <div class="md:hidden overflow-x-auto -mx-[20px] px-[20px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div class="flex gap-[15px] w-max">
+            {{-- Card 1: Grundpflege --}}
+            <div class="w-[280px] shrink-0 border-2 border-[#E8E8E8] rounded-[20px] overflow-hidden">
+                {{-- Image --}}
+                <div class="flex items-center justify-center">
+                    <img src="{{ asset('images/home/services/usluga.png') }}" alt="Grundpflege" class="pt-[20px] max-h-[160px] max-w-full object-contain">
+                </div>
+                {{-- Content --}}
+                <div class="p-[20px] pt-[15px]">
+                    <h3 class="font-semibold text-[18px] leading-[22px] text-black mb-[8px]">
+                        Grundpflege
+                    </h3>
+                    <p class="font-normal text-[14px] leading-[20px] text-[#8C8C8C] mb-[15px]">
+                        Körperpflege, Ernährung, Unterstützung der Mobilität
+                    </p>
+                    <a href="/leistungen/grundpflege" class="block w-full h-[44px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[16px] text-white">
+                        Ansehen
+                    </a>
+                </div>
+            </div>
+
+            {{-- Card 2: Behandlungspflege --}}
+            <div class="w-[280px] shrink-0 border-2 border-[#E8E8E8] rounded-[20px] overflow-hidden">
+                {{-- Image --}}
+                <div class="flex items-center justify-center">
+                    <img src="{{ asset('images/home/services/usluga2.png') }}" alt="Behandlungspflege" class="pt-[20px] max-h-[160px] max-w-full object-contain">
+                </div>
+                {{-- Content --}}
+                <div class="p-[20px] pt-[15px]">
+                    <h3 class="font-semibold text-[18px] leading-[22px] text-black mb-[8px]">
+                        Behandlungspflege
+                    </h3>
+                    <p class="font-normal text-[14px] leading-[20px] text-[#8B8B8B] mb-[15px]">
+                        Medikamentenlieferung und Einnahmekontrolle, Verbände etc
+                    </p>
+                    <a href="/leistungen/behandlungspflege" class="block w-full h-[44px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[16px] text-white">
+                        Ansehen
+                    </a>
+                </div>
+            </div>
+
+            {{-- Card 3: Haushaltshilfe --}}
+            <div class="w-[280px] shrink-0 border-2 border-[#E8E8E8] rounded-[20px] overflow-hidden">
+                {{-- Image --}}
+                <div class="flex items-center justify-center">
+                    <img src="{{ asset('images/home/services/usluga3.png') }}" alt="Haushaltshilfe" class="pt-[20px] max-h-[160px] max-w-full object-contain">
+                </div>
+                {{-- Content --}}
+                <div class="p-[20px] pt-[15px]">
+                    <h3 class="font-semibold text-[18px] leading-[22px] text-black mb-[8px]">
+                        Haushaltshilfe
+                    </h3>
+                    <p class="font-normal text-[14px] leading-[20px] text-[#8C8C8C] mb-[15px]">
+                        Kochen, Putzen, Einkaufen und Wäsche waschen
+                    </p>
+                    <a href="/leistungen/haushaltshilfe" class="block w-full h-[44px] bg-brand-cyan rounded-[10px] flex items-center justify-center font-semibold text-[16px] text-white">
+                        Ansehen
+                    </a>
                 </div>
             </div>
         </div>

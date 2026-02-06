@@ -1,5 +1,109 @@
 {{-- Bewertungen --}}
-<section class="py-[70px]">
+
+{{-- Mobile Version --}}
+<section class="md:hidden py-[30px]">
+    {{-- Section Title --}}
+    <h2 class="font-bold text-[24px] leading-[30px] text-black text-center mb-[20px]">
+        Bewertungen
+    </h2>
+
+    {{-- Reviews Horizontal Scroll --}}
+    <div class="flex gap-[12px] overflow-x-auto -mx-[16px] px-[16px] snap-x snap-mandatory" style="-ms-overflow-style: none; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+        {{-- Review 1 --}}
+        <div class="border border-[#E8E8E8] rounded-[16px] p-[16px] min-w-[280px] w-[280px] shrink-0 snap-start" x-data="{ expanded: false }">
+            {{-- Header --}}
+            <div class="flex items-center gap-[10px] mb-[12px]">
+                <div class="w-[40px] h-[40px] rounded-full bg-[#40E0D0] flex items-center justify-center shrink-0">
+                    <span class="font-bold text-[16px] text-white">J</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[14px] text-black">Juergen H.</h4>
+                    <div class="flex items-center gap-[6px]">
+                        <div class="flex gap-[2px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                        </div>
+                        <span class="text-[12px] text-[#666666]">12.2024</span>
+                    </div>
+                </div>
+            </div>
+            {{-- Content --}}
+            <p class="font-medium text-[13px] leading-[20px] text-black" :class="{ 'line-clamp-3': !expanded }">
+                Mein Vater wurde vom Pflegedienst City über zweieinhalb Jahre gepflegt und betreut. Wir waren alle sehr zufrieden, natürlich auch mein Vater. Ich habe darüber hinaus immer schnelle und kompetente Unterstützung und Tipps erhalten, als es um Fragen rund um die Pflege ging, wie z.B. bei der Beschaffung der Hilfsmittel, Gutachten usw. Ich kann diesen Pflegedienst nur weiterempfehlen!
+            </p>
+            {{-- More link --}}
+            <button
+                @click="expanded = !expanded"
+                class="flex items-center gap-[4px] text-[#40E0D0] font-medium text-[13px] mt-[8px]"
+            >
+                <span x-text="expanded ? 'Weniger anzeigen' : 'Mehr anzeigen'"></span>
+                <svg
+                    class="w-[14px] h-[14px] transition-transform duration-300"
+                    :class="{ 'rotate-180': expanded }"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+        </div>
+
+        {{-- Review 2 --}}
+        <div class="border border-[#E8E8E8] rounded-[16px] p-[16px] min-w-[280px] w-[280px] shrink-0 snap-start" x-data="{ expanded: false }">
+            {{-- Header --}}
+            <div class="flex items-center gap-[10px] mb-[12px]">
+                <div class="w-[40px] h-[40px] rounded-full bg-[#40E0D0] flex items-center justify-center shrink-0">
+                    <span class="font-bold text-[16px] text-white">T</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[14px] text-black">Theresa</h4>
+                    <div class="flex items-center gap-[6px]">
+                        <div class="flex gap-[2px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                            <img src="{{ asset('images/filialen/star.svg') }}" alt="star" class="w-[12px] h-[12px]">
+                        </div>
+                        <span class="text-[12px] text-[#666666]">05.2025</span>
+                    </div>
+                </div>
+            </div>
+            {{-- Content --}}
+            <p class="font-medium text-[13px] leading-[20px] text-black" :class="{ 'line-clamp-3': !expanded }">
+                Vielen Dank an das Team und Herrn J. Die Pflegeberatung meines Vaters wurde schnellstmoeglich und professionell abgewickelt. Besonders beeindruckt hat mich die freundliche und kompetente Art des gesamten Teams. Sie haben sich immer Zeit genommen, alle Fragen zu beantworten und uns bei jedem Schritt unterstützt. Ich kann diesen Service nur wärmstens empfehlen!
+            </p>
+            {{-- More link --}}
+            <button
+                @click="expanded = !expanded"
+                class="flex items-center gap-[4px] text-[#40E0D0] font-medium text-[13px] mt-[8px]"
+            >
+                <span x-text="expanded ? 'Weniger anzeigen' : 'Mehr anzeigen'"></span>
+                <svg
+                    class="w-[14px] h-[14px] transition-transform duration-300"
+                    :class="{ 'rotate-180': expanded }"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    {{-- Button --}}
+    <a href="#" class="flex items-center justify-center mt-[20px] h-[72px] bg-[#F6F6F6] rounded-[20px] font-medium text-[14px] text-black">
+        Weitere Bewertungen anzeigen
+    </a>
+</section>
+
+{{-- Desktop Version --}}
+<section class="hidden md:block py-[70px]">
     {{-- Section Title --}}
     <h2 class="font-bold text-[40px] leading-[48px] text-black text-center mb-[50px]">
         Bewertungen
@@ -33,16 +137,16 @@
                 Mein Vater wurde vom Pflegedienst City über zweieinhalb Jahre gepflegt und betreut. Wir waren alle sehr zufrieden, natürlich auch mein Vater. Ich habe darüber hinaus immer schnelle und kompetente Unterstützung und Tipps erhalten, als es um Fragen rund um die Pflege ging, wie z.B. bei der Beschaffung der Hilfsmittel, Gutachten usw. Ich kann diesen Pflegedienst nur weiterempfehlen!
             </p>
             {{-- More link --}}
-            <button 
-                @click="expanded = !expanded" 
+            <button
+                @click="expanded = !expanded"
                 class="flex items-center gap-[4px] text-[#40E0D0] font-medium text-[14px] mt-[12px]"
             >
                 <span x-text="expanded ? 'Weniger anzeigen' : 'Mehr anzeigen'"></span>
-                <svg 
-                    class="w-[16px] h-[16px] transition-transform duration-300" 
+                <svg
+                    class="w-[16px] h-[16px] transition-transform duration-300"
                     :class="{ 'rotate-180': expanded }"
-                    fill="none" 
-                    stroke="currentColor" 
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                 >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -76,16 +180,16 @@
                 Vielen Dank an das Team und Herrn J. Die Pflegeberatung meines Vaters wurde schnellstmoeglich und professionell abgewickelt. Besonders beeindruckt hat mich die freundliche und kompetente Art des gesamten Teams. Sie haben sich immer Zeit genommen, alle Fragen zu beantworten und uns bei jedem Schritt unterstützt. Ich kann diesen Service nur wärmstens empfehlen!
             </p>
             {{-- More link --}}
-            <button 
-                @click="expanded = !expanded" 
+            <button
+                @click="expanded = !expanded"
                 class="flex items-center gap-[4px] text-[#40E0D0] font-medium text-[14px] mt-[12px]"
             >
                 <span x-text="expanded ? 'Weniger anzeigen' : 'Mehr anzeigen'"></span>
-                <svg 
-                    class="w-[16px] h-[16px] transition-transform duration-300" 
+                <svg
+                    class="w-[16px] h-[16px] transition-transform duration-300"
                     :class="{ 'rotate-180': expanded }"
-                    fill="none" 
-                    stroke="currentColor" 
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                 >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>

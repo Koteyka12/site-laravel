@@ -1,23 +1,23 @@
 {{-- Pflegehilfe in der Nähe Section --}}
-<section class="pt-[70px] pb-[30px]" x-data="{ activeLocation: 'darmstadt' }">
+<section class="pt-[40px] md:pt-[70px] pb-[30px]" x-data="{ activeLocation: null }">
     <div class="container mx-auto px-4">
         {{-- Section Header --}}
-        <div class="text-center mb-[70px]">
-            <h2 class="font-bold text-[40px] leading-[58px] text-black mb-[20px]">
+        <div class="text-center mb-[30px] md:mb-[70px]">
+            <h2 class="font-bold text-[28px] md:text-[40px] leading-[32px] md:leading-[58px] text-black mb-[12px] md:mb-[20px]">
                 Pflegehilfe in der Nähe
             </h2>
-            <p class="font-medium text-[26px] leading-[26px]">
+            <p class="font-medium text-[18px] md:text-[26px] leading-[24px] md:leading-[26px]">
                 Vereint an allen Standorten durch gemeinsame Standards und Grundsätze
             </p>
         </div>
 
         {{-- Content: Locations + Map --}}
-        <div class="flex gap-[60px] items-start justify-center">
+        <div class="flex flex-col md:flex-row gap-[22px] md:gap-[60px] items-start justify-center">
             {{-- Left: Location Cards with scroll --}}
-            <div class="w-[384px] h-[555px] overflow-y-auto flex flex-col gap-[10px] pr-[10px] scrollbar-thin">
+            <div class="w-full md:w-[384px] md:h-[555px] md:overflow-y-auto flex flex-col gap-[10px] md:pr-[10px] scrollbar-thin">
                 {{-- Location 1: Darmstadt --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'darmstadt' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'darmstadt' ? null : 'darmstadt'"
                 >
@@ -28,7 +28,7 @@
                         Darmstadt
                     </h3>
                     <div x-show="activeLocation === 'darmstadt'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B]">
                             Pflegedienst Darmstadt City GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -62,7 +62,7 @@
 
                 {{-- Location 2: Frankfurt --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'frankfurt' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'frankfurt' ? null : 'frankfurt'"
                 >
@@ -73,7 +73,7 @@
                         Frankfurt
                     </h3>
                     <div x-show="activeLocation === 'frankfurt'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             City Pflegedienst GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -107,7 +107,7 @@
 
                 {{-- Location 3: Offenbach --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'offenbach' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'offenbach' ? null : 'offenbach'"
                 >
@@ -118,7 +118,7 @@
                         Offenbach
                     </h3>
                     <div x-show="activeLocation === 'offenbach'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             City Pflegedienst GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -152,7 +152,7 @@
 
                 {{-- Location 4: Bad Homburg --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'bad-homburg' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'bad-homburg' ? null : 'bad-homburg'"
                 >
@@ -163,7 +163,7 @@
                         Bad Homburg
                     </h3>
                     <div x-show="activeLocation === 'bad-homburg'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             City Pflegedienst GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -197,7 +197,7 @@
 
                 {{-- Location 5: Bad Vilbel --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'bad-vilbel' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'bad-vilbel' ? null : 'bad-vilbel'"
                 >
@@ -208,7 +208,7 @@
                         Bad Vilbel
                     </h3>
                     <div x-show="activeLocation === 'bad-vilbel'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             City Pflegedienst GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -242,7 +242,7 @@
 
                 {{-- Location 6: Oberursel --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'oberursel' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'oberursel' ? null : 'oberursel'"
                 >
@@ -253,7 +253,7 @@
                         Oberursel
                     </h3>
                     <div x-show="activeLocation === 'oberursel'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             City Pflegedienst GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -287,7 +287,7 @@
 
                 {{-- Location 7: Maintal --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'maintal' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'maintal' ? null : 'maintal'"
                 >
@@ -298,7 +298,7 @@
                         Maintal
                     </h3>
                     <div x-show="activeLocation === 'maintal'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             Pflegedienst City Hanau PCH GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -332,7 +332,7 @@
 
                 {{-- Location 8: Hanau --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'hanau' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'hanau' ? null : 'hanau'"
                 >
@@ -343,7 +343,7 @@
                         Hanau
                     </h3>
                     <div x-show="activeLocation === 'hanau'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             Pflegedienst City Hanau PCH GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -377,7 +377,7 @@
 
                 {{-- Location 9: Brückobel --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'brueckobel' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'brueckobel' ? null : 'brueckobel'"
                 >
@@ -388,7 +388,7 @@
                         Brückobel
                     </h3>
                     <div x-show="activeLocation === 'brueckobel'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             Pflegedienst City Hanau PCH GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -422,7 +422,7 @@
 
                 {{-- Location 10: Erlensee --}}
                 <div 
-                    class="bg-white rounded-[10px] p-[25px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
+                    class="bg-white rounded-[25px] p-[24px] hover:bg-[#F6F6F6] transition-colors cursor-pointer"
                     :class="activeLocation === 'erlensee' ? 'border-2 border-brand-cyan' : 'border border-[#E8E8E8]'"
                     @click="activeLocation = activeLocation === 'erlensee' ? null : 'erlensee'"
                 >
@@ -433,7 +433,7 @@
                         Erlensee
                     </h3>
                     <div x-show="activeLocation === 'erlensee'" x-collapse>
-                        <p class="font-medium text-[16px] text-black mt-[8px]">
+                        <p class="font-medium text-[16px] md:text-[18px] text-[#8B8B8B] mt-[8px]">
                             Pflegedienst City Hanau PCH GmbH
                         </p>
                         <p class="font-normal text-[14px] text-[#8B8B8B] mt-[10px]">
@@ -466,8 +466,13 @@
                 </div>
             </div>
 
+            {{-- Mobile: Mehr sehen Button --}}
+            <a href="/filialen" class="md:hidden block w-full py-[25px] px-[24px] bg-[#F6F6F6] rounded-[25px] flex items-center justify-center font-semibold text-[18px] text-black mt-[10px]">
+                Mehr sehen
+            </a>
+
             {{-- Right: Map --}}
-            <div class="w-[601px] h-[555px] relative">
+            <div class="hidden md:block w-[601px] h-[555px] relative">
                 <img src="{{ asset('images/home/map-region.png') }}" alt="Rhein-Main Region" class="w-full h-full object-contain">
 
                 {{-- Oberursel - текст справа --}}

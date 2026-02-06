@@ -6,7 +6,8 @@
 <div class="max-w-[1200px] mx-auto px-6 lg:px-0">
     <x-sections.hero-banner 
         image="images/filialen/hero-banner.png"
-        title="Pflegedienst City Frankfurt & Offenbach"
+        title="Pflegedienst City"
+        titleLine2="Frankfurt & Offenbach"
         subtitle="Unser freundliches und gut ausgebildetes Personal unterstützt<br/> Sie in allen Bereichen der Pflege, Betreuung<br/>und bei der Führung des Haushalts"
     />
     

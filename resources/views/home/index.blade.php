@@ -17,7 +17,7 @@
     <x-sections.employer />
 
     {{-- Button --}}
-    <div class="flex justify-center pt-[40px]">
+    <div class="flex justify-center pt-0 md:pt-[40px]">
         <a href="#" class="flex items-center justify-center h-[90px] w-[386px] bg-[#64CEED] rounded-[25px]">
             <span class="font-semibold text-[22px] leading-[22px] text-white">Weitere Informationen</span>
         </a>

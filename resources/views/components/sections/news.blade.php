@@ -1,5 +1,37 @@
 {{-- Aktuelles im Blick --}}
-<section class="pt-[70px] pb-[30px]">
+
+{{-- Mobile Version --}}
+<section class="md:hidden pt-[30px] pb-[30px]">
+    {{-- Section Title --}}
+    <div class="text-center mb-[30px]">
+        <h2 class="font-bold text-[24px] leading-[28px] text-black">
+            Aktuelles im Blick
+        </h2>
+    </div>
+
+    {{-- Featured Article --}}
+    <a href="#" class="block mb-[15px]">
+        <img
+            src="{{ asset('images/home/news-featured.png') }}"
+            alt="Pflege von bettlägerigen Menschen"
+            class="w-full rounded-[20px] object-cover aspect-[16/10]"
+        >
+    </a>
+    <h3 class="font-semibold text-[18px] leading-[22px] text-black mb-[5px]">
+        Pflege von bettlägerigen Menschen
+    </h3>
+    <span class="font-normal text-[14px] leading-[14px] text-[#8B8B8B]">
+        00.00.0000
+    </span>
+
+    {{-- Mehr sehen Button --}}
+    <a href="{{ route('blog.index') }}" class="block w-full h-[50px] bg-[#F6F6F6] rounded-[25px] flex items-center justify-center font-semibold text-[16px] text-black mt-[20px]">
+        Mehr sehen
+    </a>
+</section>
+
+{{-- Desktop Version --}}
+<section class="hidden md:block pt-[70px] pb-[30px]">
     {{-- Section Title --}}
     
     <div class="text-center mb-[70px]">

@@ -1,5 +1,188 @@
 {{-- Häufig gestellte Fragen Section --}}
-<section class="py-[60px]">
+
+{{-- Mobile Version --}}
+<section class="md:hidden py-[30px]" x-data="{ activeTab: 'allgemein' }">
+    {{-- Section Header --}}
+    <h2 class="text-[24px] font-semibold text-black text-center mb-[20px]">
+        Häufig gestellte Fragen
+    </h2>
+
+    {{-- Category Tabs - 3 per row, horizontal scroll --}}
+    <div class="overflow-x-auto -mx-[20px] px-[20px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] mb-[20px]">
+        <div class="grid grid-rows-3 grid-flow-col auto-cols-max gap-[8px]">
+            <button type="button" @click="activeTab = 'allgemein'"
+                :class="activeTab === 'allgemein' ? 'bg-brand-cyan text-white' : 'bg-[#F6F6F6] text-black'"
+                class="px-[14px] py-[8px] rounded-full text-[16px] font-medium transition-colors whitespace-nowrap">
+                Allgemeine Fragen
+            </button>
+            <button type="button" @click="activeTab = 'pflegekraefte'"
+                :class="activeTab === 'pflegekraefte' ? 'bg-brand-cyan text-white' : 'bg-[#F6F6F6] text-black'"
+                class="px-[14px] py-[8px] rounded-full text-[16px] font-medium transition-colors whitespace-nowrap">
+                Pflegekräfte und Qualität
+            </button>
+            <button type="button" @click="activeTab = 'kosten'"
+                :class="activeTab === 'kosten' ? 'bg-brand-cyan text-white' : 'bg-[#F6F6F6] text-black'"
+                class="px-[14px] py-[8px] rounded-full text-[16px] font-medium transition-colors whitespace-nowrap">
+                Kosten und Finanzierung
+            </button>
+            <button type="button" @click="activeTab = 'organisation'"
+                :class="activeTab === 'organisation' ? 'bg-brand-cyan text-white' : 'bg-[#F6F6F6] text-black'"
+                class="px-[14px] py-[8px] rounded-full text-[16px] font-medium transition-colors whitespace-nowrap">
+                Organisatorisches
+            </button>
+            <button type="button" @click="activeTab = 'spezielle'"
+                :class="activeTab === 'spezielle' ? 'bg-brand-cyan text-white' : 'bg-[#F6F6F6] text-black'"
+                class="px-[14px] py-[8px] rounded-full text-[16px] font-medium transition-colors whitespace-nowrap">
+                Spezielle Leistungen
+            </button>
+            <button type="button" @click="activeTab = 'vertrauen'"
+                :class="activeTab === 'vertrauen' ? 'bg-brand-cyan text-white' : 'bg-[#F6F6F6] text-black'"
+                class="px-[14px] py-[8px] rounded-full text-[16px] font-medium transition-colors whitespace-nowrap">
+                Vertrauen und Bewertungen
+            </button>
+        </div>
+    </div>
+
+    {{-- FAQ Accordion (no arrows on mobile) --}}
+    <div x-data="{ openItem: null }">
+        {{-- Allgemeine Fragen --}}
+        <div x-show="activeTab === 'allgemein'">
+            <div class="border-t border-[#E7E7E7]">
+                <button @click="openItem = openItem === 1 ? null : 1" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Wann wird Pflege benötigt?</span>
+                </button>
+                <div x-show="openItem === 1" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Der Bedarf an Pflege (Pflegebedürftigkeit) gemäß den gesetzlichen Bestimmungen kann in jedem Lebensabschnitt entstehen. Personen gelten als pflegebedürftig, wenn sie aufgrund ihrer Gesundheit nicht mehr in der Lage sind, ein eigenständiges Leben zu führen und auf Hilfe angewiesen sind.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-[#E7E7E7]">
+                <button @click="openItem = openItem === 2 ? null : 2" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Was ist ein Pflegegrad?</span>
+                </button>
+                <div x-show="openItem === 2" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Ein Pflegegrad beschreibt das Ausmaß der Beeinträchtigung der Selbstständigkeit einer Person. Es gibt fünf Pflegegrade, wobei Pflegegrad 1 die geringste und Pflegegrad 5 die schwerste Beeinträchtigung darstellt.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-[#E7E7E7]">
+                <button @click="openItem = openItem === 3 ? null : 3" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Warum ist der Pflegegrad wichtig?</span>
+                </button>
+                <div x-show="openItem === 3" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Der Pflegegrad bestimmt, welche Leistungen Sie von der Pflegekasse erhalten. Je höher der Pflegegrad, desto mehr Unterstützung steht Ihnen zu.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-[#E7E7E7]">
+                <button @click="openItem = openItem === 4 ? null : 4" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Wie wird der Pflegegrad bestimmt?</span>
+                </button>
+                <div x-show="openItem === 4" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Der Pflegegrad wird durch den Medizinischen Dienst (MD) ermittelt. Ein Gutachter besucht Sie zu Hause und bewertet Ihre Selbstständigkeit in verschiedenen Bereichen.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-[#E7E7E7]">
+                <button @click="openItem = openItem === 5 ? null : 5" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Ist Pflegedienst City auch nachts und am Wochenende erreichbar?</span>
+                </button>
+                <div x-show="openItem === 5" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Ja, unser Pflegedienst ist rund um die Uhr erreichbar - auch nachts, an Wochenenden und Feiertagen.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-b border-[#E7E7E7]">
+                <button @click="openItem = openItem === 6 ? null : 6" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Wie lange dauert es, bis die Pflege beginnen kann?</span>
+                </button>
+                <div x-show="openItem === 6" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Nach Ihrer Anfrage können wir in der Regel innerhalb weniger Tage mit der Pflege beginnen. In dringenden Fällen auch kurzfristiger.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {{-- Kosten und Finanzierung --}}
+        <div x-show="activeTab === 'kosten'">
+            <div class="border-t border-b border-[#E7E7E7]">
+                <button @click="openItem = openItem === 10 ? null : 10" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Welche Kosten übernimmt die Pflegekasse?</span>
+                </button>
+                <div x-show="openItem === 10" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Die Pflegekasse übernimmt je nach Pflegegrad unterschiedliche Leistungen. Wir beraten Sie gerne zu Ihren individuellen Ansprüchen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {{-- Pflegekräfte und Qualität --}}
+        <div x-show="activeTab === 'pflegekraefte'">
+            <div class="border-t border-b border-[#E7E7E7]">
+                <button @click="openItem = openItem === 20 ? null : 20" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Wie qualifiziert sind Ihre Pflegekräfte?</span>
+                </button>
+                <div x-show="openItem === 20" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Alle unsere Pflegekräfte sind examiniert und verfügen über langjährige Erfahrung in der ambulanten Pflege.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {{-- Organisatorisches --}}
+        <div x-show="activeTab === 'organisation'">
+            <div class="border-t border-b border-[#E7E7E7]">
+                <button @click="openItem = openItem === 30 ? null : 30" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Wie läuft die Erstberatung ab?</span>
+                </button>
+                <div x-show="openItem === 30" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Die Erstberatung ist kostenlos und unverbindlich. Wir besuchen Sie zu Hause und besprechen Ihre individuellen Bedürfnisse.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {{-- Spezielle Leistungen --}}
+        <div x-show="activeTab === 'spezielle'">
+            <div class="border-t border-b border-[#E7E7E7]">
+                <button @click="openItem = openItem === 40 ? null : 40" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Bieten Sie auch Verhinderungspflege an?</span>
+                </button>
+                <div x-show="openItem === 40" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Ja, wir bieten Verhinderungspflege an, wenn pflegende Angehörige eine Auszeit benötigen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {{-- Vertrauen und Bewertungen --}}
+        <div x-show="activeTab === 'vertrauen'">
+            <div class="border-t border-b border-[#E7E7E7]">
+                <button @click="openItem = openItem === 50 ? null : 50" class="w-full py-4 text-left">
+                    <span class="text-[16px] font-semibold text-black">Wie kann ich Ihre Qualität überprüfen?</span>
+                </button>
+                <div x-show="openItem === 50" x-collapse class="pb-4">
+                    <p class="text-[14px] text-black leading-[22px]">
+                        Sie können unsere Bewertungen auf Google und anderen Plattformen einsehen. Wir sind stolz auf unser positives Feedback.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- Desktop Version --}}
+<section class="hidden md:block py-[60px]">
     <div class="container mx-auto px-4">
         {{-- Section Header --}}
         <h2 class="text-[40px] font-semibold text-black text-center mb-8">
